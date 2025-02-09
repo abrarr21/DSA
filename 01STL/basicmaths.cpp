@@ -1,5 +1,42 @@
 #include <bits/stdc++.h>
+#include <cmath>
 using namespace std;
+
+void countDivisors(int n) {
+  for (int i = 1; i <= n; i++) {
+    if (n % i == 0) {
+      cout << i << " ";
+    }
+  }
+  cout << endl;
+}
+
+void countDivisor2(int n) {
+  vector<int> ls;
+  for (int i = 1; i * i <= n; i++) {
+    if (n % i == 0) {
+      ls.push_back(i);
+      if ((n / i) != i) {
+        ls.push_back(n / i);
+      }
+    }
+  }
+  sort(ls.begin(), ls.end());
+  for (auto it : ls)
+    cout << it << " ";
+}
+
+int gcd(int a, int b) {
+  while (a > 0 && b > 0) {
+    if (a > b)
+      a = a % b;
+    else
+      b = b % a;
+  }
+  if (a == 0)
+    return b;
+  return a;
+}
 
 int main() {
   int n;
@@ -30,4 +67,11 @@ int main() {
   } else {
     cout << "False: The number is not an Armstrong" << endl;
   }
+
+  cout << "All the divisors of n: " << endl;
+  countDivisors(36);
+  countDivisor2(36);
+
+  cout << "The gcd of the number: " << endl;
+  gcd(20, 15);
 }
