@@ -33,6 +33,7 @@ console.log(Math.abs(15));
 console.log(Math.max(50, 40, 299)); // gives the max number
 console.log(Math.min(50, 40, 299)); // gives the min number
 console.log(Math.random()); //give random num from 0 to 1
+console.log(Math.random() * 100);
 
 let xx = 89.343423;
 console.log(xx.toFixed(2)); //gives 2 number after decimal
